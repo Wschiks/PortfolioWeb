@@ -4,6 +4,8 @@ import projecten1 from "./assets/projecten1.png";
 import projecten2 from "./assets/projecten2.png";
 import projecten3 from "./assets/projecten3.png";
 
+
+
 // pakt alle plaatjes uit de map met .svg stopt dat in de array en die loopen we
 
 const images = import.meta.glob("/src/assets/*.svg", {eager: true});
@@ -12,36 +14,61 @@ const svgArray = Object.values(images).map(img => img.default);
 
 function App() {
     return (
-        <div className="w-screen">
-            {/* Landingspagina */}
-            <div className="h-screen w-screen bg-black">
-                <div
-                    className="gapside h-full flex flex-row">
-                    <div className="w-1/2  flex items-center">
-                        <p className="arimo text-white font-bold text-7xl">Welkom op mij<br/> portfolio!</p>
+        <div>
+            <div className="w-screen h-screen bg-blue-600 flex flex-col">
+                {/* Top section */}
+                <div className="h-1/5 bg-green-600 relative">
+                    {/* Gapside content (always centered in the screen) */}
+                    <div className="gapside bg-gray-500 h-full flex items-center justify-center tracking-[1rem] text-3xl">
+                        <p className="text-white font">PORTFOLIO</p>
                     </div>
-                    <div className="w-1/2  flex items-center justify-center flex-col">
-                        <div className="h-4/6 w-full  flex items-end justify-end">
-                            <div></div>
-                            <h1>
-                                <div className="bg-gray-500 rounded-full h-[500px] w-[500px]"></div>
-                            </h1>
-                        </div>
-                        <div className="h-2/6 w-full ">
-                            <div className="flex items-center  justify-start w-fit flex-col">
-                                <div className="w-[100px] h-[100px] ">
-                                    <img src={pijl} alt="Pijl" className="w-18 h-auto -mt-24 -ml-5"/>
-                                </div>
-                                <h1 className="playpen font-light">Hoi, Ik ben Wout
-                                </h1></div>
-                        </div>
+
+                    {/* Stripes (stick to the right side) */}
+                    <div className="absolute top-0 right-0 h-full flex flex-row items-start space-x-[1.8vw] bg-gray-500 pr-6">
+                        <div className="w-px h-32 bg-white"></div>
+                        <div className="w-px h-42 bg-white"></div>
+                        <div className="w-px h-55 bg-white"></div>
+                        <div className="w-px h-66 bg-white"></div>
+                        <div className="w-px h-77 bg-white"></div>
+                        <div className="w-px h-88 bg-white"></div>
+                        <div className="w-px h-95 bg-white"></div>
+                        <div className="w-px h-100 bg-white"></div>
                     </div>
                 </div>
 
+                {/* Middle section */}
+
+                    <div className="gapside bg-gray-400 flex flex-col h-2/3 justify-center leading-[22vh]">
+                        <p className="text-[30vh] font text-white">SOFTWARE</p>
+                        <p className="text-[30vh] font text-white flex justify-end">developer</p>
+                    </div>
+
+                {/* Bottom section */}
+                <div className="flex justify-between items-end h-1/5">
+                    {/* Stripes (left side) */}
+                    <div className="flex flex-row items-center space-x-[1.8vw] pl-6 h-full">
+                        <div className="w-px h-200 bg-white"></div>
+                        <div className="w-px h-190 bg-white"></div>
+                        <div className="w-px h-176 bg-white"></div>
+                        <div className="w-px h-154 bg-white"></div>
+                        <div className="w-px h-132 bg-white"></div>
+                        <div className="w-px h-110 bg-white"></div>
+                        <div className="w-px h-84 bg-white"></div>
+                        <div className="w-px h-64 bg-white"></div>
+
+                    </div>
+
+                    {/* Gapside content (always centered) */}
+                    <div className="gapside bg-gray-700">
+                        {/* Your centered content here */}
+                    </div>
+                </div>
             </div>
 
+
             <div className="h-[33vh] w-full bg-black"></div>
-            {/* Info Box */}
+            {/* Info Box */
+            }
             <div>
                 {/* Info 1 */}
                 <div className="sticky top-0 h-screen w-screen bg-white flex justify-center z-10">
@@ -95,7 +122,8 @@ function App() {
                 </div>
             </div>
 
-            {/*Projecten*/}
+            {/*Projecten*/
+            }
             <div className="h-[80vh] bg-black flex items-center justify-center ">
                 <h1 className="text-3xl font-bold text-white">projecten</h1>
             </div>
@@ -192,7 +220,8 @@ function App() {
                         <p className="arimo text-5xl font-bold text-gray-400 gapside">contact</p>
                         <div className="w-full h-[2px] bg-gray-300 opacity-40 mt-4 mb-4"></div>
 
-                        <a href="mailto:woutschiks@gmail.com" className="arimo text-6xl font-bold text-white gapside block">
+                        <a href="mailto:woutschiks@gmail.com"
+                           className="arimo text-6xl font-bold text-white gapside block">
                             woutschiks@gmail.com
                         </a>
                         <div className="w-full h-[2px] bg-gray-300 opacity-40 mt-4 mb-4"></div>
@@ -202,15 +231,16 @@ function App() {
                         </a>
                         <div className="w-full h-[2px] bg-gray-300 opacity-40 mt-4 mb-4"></div>
 
-                        <a href="https://www.linkedin.com/in/woutschiks/" target="_blank" rel="noopener noreferrer" className="arimo text-6xl font-bold text-white gapside block">
+                        <a href="https://www.linkedin.com/in/woutschiks/" target="_blank" rel="noopener noreferrer"
+                           className="arimo text-6xl font-bold text-white gapside block">
                             LinkedIn
                         </a>
                         <div className="w-full h-[2px] bg-gray-300 opacity-40 mt-4 mb-4"></div>
 
-                        <a href="https://github.com/Wschiks" target="_blank" rel="noopener noreferrer" className="arimo text-6xl font-bold text-white gapside block">
+                        <a href="https://github.com/Wschiks" target="_blank" rel="noopener noreferrer"
+                           className="arimo text-6xl font-bold text-white gapside block">
                             GitHub
                         </a>
-
 
 
                     </div>
@@ -219,7 +249,8 @@ function App() {
             </div>
 
         </div>
-    );
+    )
+        ;
 }
 
 
