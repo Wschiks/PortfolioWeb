@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+a {
+    font-weight: 500;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #CCCCCC;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+
+
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+}
+
+
+/*font*/
+
+.arimo {
+    font-family: "Arimo", sans-serif;
+    font-style: normal;
+}
+
+.playpen {
+    color: white;
+    font-family: "Playpen Sans", cursive;
+    font-style: normal;
+}
+
+
+/*Standaard nette ruimte links en rechts naast de page*/
+.gapside {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 2rem);
+}
+
+@media (min-width: 768px) {
+    .gapside {
+        max-width: calc(100% - 6rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gapside {
+        max-width: calc(100% - 460px);
+    }
+}
+
+
+/*animaties voro de vliegende blokjes / sterretjes*/
+
+@keyframes drift-x {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+}
+
+@keyframes drift-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}
+
+@keyframes drift-diagonal1 {
+    0%, 100% { transform: translate(0,0); }
+    50% { transform: translate(20px, 20px); }
+}
+
+@keyframes drift-diagonal2 {
+    0%, 100% { transform: translate(0,0); }
+    50% { transform: translate(-20px, 20px); }
+}
+
+@keyframes drift-diagonal3 {
+    0%, 100% { transform: translate(0,0); }
+    50% { transform: translate(20px, -20px); }
+}
+
+@keyframes drift-diagonal4 {
+    0%, 100% { transform: translate(0,0); }
+    50% { transform: translate(-20px, -20px); }
+}
+
+.animate-drift-x { animation: drift-x ease-in-out infinite; }
+.animate-drift-y { animation: drift-y ease-in-out infinite; }
+.animate-drift-d1 { animation: drift-diagonal1 ease-in-out infinite; }
+.animate-drift-d2 { animation: drift-diagonal2 ease-in-out infinite; }
+.animate-drift-d3 { animation: drift-diagonal3 ease-in-out infinite; }
+.animate-drift-d4 { animation: drift-diagonal4 ease-in-out infinite; }
