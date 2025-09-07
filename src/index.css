@@ -62,13 +62,15 @@ button {
 
 
 .arimo {
-    font-family: "Arimo", sans-serif;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
     font-style: normal;
 }
 
 .playpen {
     color: white;
-    font-family: "Playpen Sans", cursive;
+    font-family: "Staatliches", sans-serif;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -132,3 +134,5 @@ button {
 .animate-drift-d2 { animation: drift-diagonal2 ease-in-out infinite; }
 .animate-drift-d3 { animation: drift-diagonal3 ease-in-out infinite; }
 .animate-drift-d4 { animation: drift-diagonal4 ease-in-out infinite; }
+
+

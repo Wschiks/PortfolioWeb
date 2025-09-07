@@ -1,9 +1,13 @@
 import './App.css'
-import pijl from "./assets/pijl.png";
 import projecten1 from "./assets/projecten1.png";
 import projecten2 from "./assets/projecten2.png";
 import projecten3 from "./assets/projecten3.png";
 
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useEffect, useRef} from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 // pakt alle plaatjes uit de map met .svg stopt dat in de array en die loopen we
@@ -13,18 +17,62 @@ const svgArray = Object.values(images).map(img => img.default);
 
 
 function App() {
+    const leftRef = useRef(null);
+    const rightRef = useRef(null);
+    const downRef = useRef(null);
+
+    useEffect(() => {
+        gsap.to(leftRef.current, {
+            x: "-166vw",
+            letterSpacing: "9vw",
+            scrollTrigger: {
+                trigger: '#header',
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            },
+        });
+
+        gsap.to(rightRef.current, {
+            x: "210vw",
+            letterSpacing: "11vw",
+            scrollTrigger: {
+                trigger: '#header',
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            },
+        });
+
+        gsap.to(downRef.current, {
+            y: "33vh",
+            fontSize: "30vh",
+            scrollTrigger: {
+                trigger: '#aboutme',
+                start: "top bottom",
+                end: "top top",
+                endTrigger: "#StopAboutMe",
+                scrub: true,
+            },
+        });
+
+    }, []);
+
+
     return (
         <div>
-            <div className="w-screen h-screen bg-blue-600 flex flex-col">
+            <div id="header" className="w-screen h-screen bg-black flex flex-col">
                 {/* Top section */}
-                <div className="h-1/5 bg-green-600 relative">
+                <div className="h-1/5  relative">
                     {/* Gapside content (always centered in the screen) */}
-                    <div className="gapside bg-gray-500 h-full flex items-center justify-center tracking-[1rem] text-3xl">
+                    <div
+                        className="gapside  h-full flex items-center justify-center tracking-[1rem] text-3xl">
                         <p className="text-white font">PORTFOLIO</p>
                     </div>
 
                     {/* Stripes (stick to the right side) */}
-                    <div className="absolute top-0 right-0 h-full flex flex-row items-start space-x-[1.8vw] bg-gray-500 pr-6">
+                    <div
+                        className="absolute top-0 right-0 h-full flex flex-row items-start space-x-[1.8vw]  pr-6">
                         <div className="w-px h-32 bg-white"></div>
                         <div className="w-px h-42 bg-white"></div>
                         <div className="w-px h-55 bg-white"></div>
@@ -38,10 +86,11 @@ function App() {
 
                 {/* Middle section */}
 
-                    <div className="gapside bg-gray-400 flex flex-col h-2/3 justify-center leading-[22vh]">
-                        <p className="text-[30vh] font text-white">SOFTWARE</p>
-                        <p className="text-[30vh] font text-white flex justify-end">developer</p>
-                    </div>
+                <div className="gapside  flex flex-col h-2/3 justify-center leading-[22vh]">
+                    <p ref={leftRef} className="text-[30vh] font text-white ">SOFTWARE</p>
+                    <p ref={rightRef}
+                       className="text-[30vh] font text-white flex justify-end ">developer</p>
+                </div>
 
                 {/* Bottom section */}
                 <div className="flex justify-between items-end h-1/5">
@@ -59,19 +108,45 @@ function App() {
                     </div>
 
                     {/* Gapside content (always centered) */}
-                    <div className="gapside bg-gray-700">
-                        {/* Your centered content here */}
-                    </div>
+
                 </div>
             </div>
 
 
-            <div className="h-[33vh] w-full bg-black"></div>
+
+            <div  className="h-[100vh] w-full bg-black flex flex-row">
+                <div
+                    className="gapside h-full flex flex-row">
+                    <div className="w-1/2  flex items-center ">
+                        <div className="w-[57.2vh] text-justify aspect-square  text-white text-[60px] font">
+                            Van idee naar code, design en creativiteit. Als 3e jaar software development student breng
+                            ik ideeën tot leven op een creatieve manier.
+                        </div>
+
+
+                    </div>
+                    <div className="w-1/2  flex items-center justify-center flex-col ">
+                        <div className="bg-gray-500 w-[48vh] aspect-square"></div>
+                        <div className="w-[48vh] flex  justify-center">
+                            <h1 className="text-white text-[60px] tracking-[11px]  font">Hoi, Ik ben Wout </h1>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="StopAboutMe" className="h-[80vh] w-full bg-black flex  items-center flex-col">
+                <div className="h-[40vh] w-full bg-black z-10">
+
+                </div>
+                <p ref={downRef} className="text-[40vh] font text-white left-slide-text -mt-[45vh]">About me</p>
+            </div>
             {/* Info Box */
             }
             <div>
                 {/* Info 1 */}
-                <div className="sticky top-0 h-screen w-screen bg-white flex justify-center z-10">
+                <div id="aboutme" className="sticky top-0 h-screen w-screen bg-white flex justify-center z-10">
                     <div
                         className=" gapside h-1/3 flex items-center justify-between">
 
