@@ -2,6 +2,8 @@ import './App.css'
 import projecten1 from "./assets/projecten1.png";
 import projecten2 from "./assets/projecten2.png";
 import projecten3 from "./assets/projecten3.png";
+import woutFotoPortfolio from "./assets/woutFotoPortfolio.png";
+
 
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -19,7 +21,8 @@ const svgArray = Object.values(images).map(img => img.default);
 function App() {
     const leftRef = useRef(null);
     const rightRef = useRef(null);
-    const downRef = useRef(null);
+    const projectenRef = useRef(null);
+    const aboutMeRef = useRef(null);
 
     useEffect(() => {
         gsap.to(leftRef.current, {
@@ -44,14 +47,26 @@ function App() {
             },
         });
 
-        gsap.to(downRef.current, {
+        gsap.to(aboutMeRef.current, {
+            y: "33vh",
+            fontSize: "35vh",
+            scrollTrigger: {
+                trigger: '#header',
+                start: "bottom top",
+                end: "top center",
+                endTrigger: "#stopAboutMe",
+                scrub: true,
+            },
+        });
+
+        gsap.to(projectenRef.current, {
             y: "33vh",
             fontSize: "30vh",
             scrollTrigger: {
-                trigger: '#aboutme',
+                trigger: '#projectenStart',
                 start: "top bottom",
-                end: "top top",
-                endTrigger: "#StopAboutMe",
+                endTrigger: "#stopAboutMe",
+                end: "bottom top",
                 scrub: true,
             },
         });
@@ -112,9 +127,14 @@ function App() {
                 </div>
             </div>
 
+            <div className="h-[70vh] w-full bg-black flex  items-center flex-col">
+                <div className="h-[35vh] w-full bg-black z-10">
 
+                </div>
+                <p ref={aboutMeRef} className="text-[35vh] font text-white left-slide-text -mt-[45vh]">About me</p>
+            </div>
 
-            <div  className="h-[100vh] w-full bg-black flex flex-row">
+            <div id="stopAboutMe" className="h-[100vh] w-full bg-black flex flex-row">
                 <div
                     className="gapside h-full flex flex-row">
                     <div className="w-1/2  flex items-center ">
@@ -126,9 +146,11 @@ function App() {
 
                     </div>
                     <div className="w-1/2  flex items-center justify-center flex-col ">
-                        <div className="bg-gray-500 w-[48vh] aspect-square"></div>
+                        <div className=" w-[48vh] aspect-square flex justify-center">
+                            <img src={woutFotoPortfolio} alt="projecten2" className="object-cover h-full grayscale-[40%] "/>
+                        </div>
                         <div className="w-[48vh] flex  justify-center">
-                            <h1 className="text-white text-[60px] tracking-[11px]  font">Hoi, Ik ben Wout </h1>
+                            <h1 className="text-white text-[60px] tracking-[11px] pt-3  font">Hoi, Ik ben Wout </h1>
                         </div>
                     </div>
                 </div>
@@ -140,24 +162,29 @@ function App() {
                 <div className="h-[40vh] w-full bg-black z-10">
 
                 </div>
-                <p ref={downRef} className="text-[40vh] font text-white left-slide-text -mt-[45vh]">About me</p>
+                <p ref={projectenRef} className="text-[40vh] font text-white left-slide-text -mt-[45vh]">projecten</p>
             </div>
             {/* Info Box */
             }
             <div>
                 {/* Info 1 */}
-                <div id="aboutme" className="sticky top-0 h-screen w-screen bg-white flex justify-center z-10">
+                <div id="projectenStart" className="sticky top-0 h-screen w-screen bg-white flex justify-center z-10">
                     <div
                         className=" gapside h-1/3 flex items-center justify-between">
 
-                        <div className="h-full aspect-square  flex items-center text-black ">
+                        <div className="h-full aspect-square w-[calc(+50%)]  flex items-center text-black ">
                             <div className="w-[50px] h-[110px] arimo text-4xl font-bold text-gray-300 "><p>01</p></div>
-                            <p className="arimo text-7xl font-bold">Dit<br/>ben ik </p></div>
+                            <div className="flex flex-col">
+                                <p className="arimo text-5xl font-bold text-black">Crypto overzicht dashboard</p>
+                                <p className="arimo text-2xl font-light text-black">een overzicht om al je favorieten
+                                    crypto
+                                    munten te volgen</p>
+                            </div>
+                        </div>
                         <div
                             className="h-full aspect-square w-[calc(+35%)]  flex items-center justify-center text-black">
-                            <p className="arimo text-xl font-thin">Ik ben Wout, een developer die alles leuk vindt van
-                                front-end tot back-end en van software tot robotica. Ik combineer creativiteit met
-                                techniek om projecten tot leven te brengen.</p></div>
+                            <img src={projecten1} alt="projecten1" className=" h-[90%] w-auto"/>
+                        </div>
 
                     </div>
                 </div>
@@ -166,15 +193,17 @@ function App() {
                 <div className="sticky top-[33vh] h-[66vh] w-screen bg-gray-100 flex justify-center z-20">
                     <div
                         className=" gapside h-1/2 flex items-center justify-between">
-                        <div className="h-full aspect-square  flex items-center text-black ">
+                        <div className="h-full aspect-square w-[calc(+50%)]  flex items-center text-black ">
                             <div className="w-[50px] h-[110px] arimo text-4xl font-bold text-gray-300 "><p>02</p></div>
-                            <p
-                                className="arimo text-7xl font-bold">Ik bouw<br/>dingen </p></div>
+                            <div className="flex flex-col">
+                                <p className="arimo text-5xl font-bold text-black">Who is who?</p>
+                                <p className="arimo text-2xl font-light text-black">Twee spelers beurtgebaseerd spel
+                                    waar bij je
+                                    het karater van je tegenstander moet gokken.</p></div>
+                        </div>
                         <div
                             className="h-full aspect-square w-[calc(+35%)]  flex items-center justify-center text-black">
-                            <p className="arimo text-xl font-thin">Van concept tot live: ik zorg dat websites en apps
-                                werken én er strak uitzien. Mijn projecten variëren van kleine prototypes tot volledige
-                                webapplicaties.</p></div>
+                            <img src={projecten2} alt="projecten2" className=" h-[90%] w-auto"/></div>
 
                     </div>
                 </div>
@@ -183,57 +212,25 @@ function App() {
                 <div className="sticky h-[33vh] w-screen bg-black flex justify-center z-30">
                     <div
                         className=" gapside h-full flex items-center justify-between">
-                        <div className="h-full aspect-square  flex items-center text-white ">
+                        <div className="h-full aspect-square w-[calc(+50%)]  flex items-center text-white ">
                             <div className="w-[50px] h-[110px] arimo text-4xl font-bold text-gray-300 "><p>03</p></div>
-                            <p
-                                className="arimo text-7xl font-bold">Altijd<br/>scherp </p></div>
+                            <div className="flex flex-col">
+                            <p className="arimo text-5xl font-bold text-white">Experimenten & projecten</p>
+                            <p className="arimo text-2xl font-light text-white"> Ook buiten school werk ik aan projecten
+                                die
+                                ik interessant vind, zoals een React Spotify Game en een zelfrijdende
+                                Raspberry
+                                Pi RC Auto.</p></div></div>
                         <div
                             className="h-full aspect-square w-[calc(+35%)]  flex items-center justify-center text-white">
-                            <p className="arimo text-xl font-thin">Nieuwe tools, trends en uitdagingen houden mij
-                                scherp. Ik blijf leren en verbeteren, zodat mijn werk toekomstbestendig en effectief
-                                is.</p></div>
+                            <img src={projecten3} alt="projecten3" className=" h-[90%] w-auto"/></div>
 
                     </div>
                 </div>
             </div>
 
-            {/*Projecten*/
-            }
-            <div className="h-[80vh] bg-black flex items-center justify-center ">
-                <h1 className="text-3xl font-bold text-white">projecten</h1>
-            </div>
 
-            <div className="h-screen w-screen bg-black flex items-center justify-center  flex-col">
-
-                <div className="gapside h-1/3  flex items-center justify-between">
-                    <div className=" h-[90%] w-[40vw] flex justify-center flex-col">
-                        <p className="arimo text-5xl font-bold text-white">Crypto overzicht dashboard</p>
-                        <p className="arimo text-2xl font-light text-white">een overzicht om al je favorieten crypto
-                            munten te volgen</p>
-                    </div>
-                    <img src={projecten1} alt="projecten1" className=" h-[90%] w-auto"/>
-                </div>
-                <div className="gapside h-1/3  flex items-center justify-between">
-                    <div className=" h-[90%] w-[40vw] flex justify-center flex-col">
-                        <p className="arimo text-5xl font-bold text-white">Who is who?</p>
-                        <p className="arimo text-2xl font-light text-white">Twee spelers beurtgebaseerd spel waar bij je
-                            het karater van je tegenstander moet gokken.</p>
-                    </div>
-                    <img src={projecten2} alt="projecten2" className=" h-[90%] w-auto"/>
-                </div>
-                <div className="gapside h-1/3  flex items-center justify-between">
-                    <div className=" h-[90%] w-[40vw] flex justify-center flex-col">
-                        <p className="arimo text-5xl font-bold text-white">Experimenten & projecten</p>
-                        <p className="arimo text-2xl font-light text-white">Ook buiten school werk ik aan projecten die
-                            ik interessant vind, zoals een interactieve React Spotify Game en een zelfrijdende Raspberry
-                            Pi RC Auto.</p>
-                    </div>
-                    <img src={projecten3} alt="projecten3" className=" h-[90%] w-auto"/>
-                </div>
-
-
-                {/*skill*/}
-            </div>
+            {/*skill*/}
             <div className="h-screen w-screen bg-black flex items-center justify-center wrap-normal flex-col ">
 
                 <h1 className="text-3xl font-bold text-white">skill </h1>
