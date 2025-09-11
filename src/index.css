@@ -96,6 +96,20 @@ button {
 }
 
 
+
+
+@media (min-width: 768px) {
+    .gapside {
+        max-width: calc(100% - 6rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .gapside {
+        max-width: calc(100% - 460px);
+    }
+}
+
 /*animaties voro de vliegende blokjes / sterretjes*/
 
 @keyframes drift-x {

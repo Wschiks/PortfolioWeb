@@ -60,7 +60,7 @@ function App() {
         });
 
         gsap.to(projectenRef.current, {
-            y: "33vh",
+            y: "25vh",
             fontSize: "30vh",
             scrollTrigger: {
                 trigger: '#projectenStart',
@@ -76,7 +76,7 @@ function App() {
 
     return (
         <div>
-            <div id="header" className="w-screen h-screen bg-black flex flex-col">
+            <div id="header" className="w-screen h-screen bg-black flex flex-col overflow-hidden">
                 {/* Top section */}
                 <div className="h-1/5  relative">
                     {/* Gapside content (always centered in the screen) */}
@@ -131,7 +131,7 @@ function App() {
                 <div className="h-[35vh] w-full bg-black z-10">
 
                 </div>
-                <p ref={aboutMeRef} className="text-[35vh] font text-white left-slide-text -mt-[45vh]">About me</p>
+                <p ref={aboutMeRef} className="text-[0vh] font text-white left-slide-text -mt-[45vh]">About me</p>
             </div>
 
             <div id="stopAboutMe" className="h-[100vh] w-full bg-black flex flex-row">
@@ -150,7 +150,7 @@ function App() {
                             <img src={woutFotoPortfolio} alt="projecten2" className="object-cover h-full grayscale-[40%] "/>
                         </div>
                         <div className="w-[48vh] flex  justify-center">
-                            <h1 className="text-white text-[60px] tracking-[11px] pt-3  font">Hoi, Ik ben Wout </h1>
+                            <h1 className="text-white text-[60px] tracking-[11px]  font">Hoi, Ik ben Wout </h1>
                         </div>
                     </div>
                 </div>
@@ -158,11 +158,11 @@ function App() {
 
             </div>
 
-            <div id="StopAboutMe" className="h-[80vh] w-full bg-black flex  items-center flex-col">
-                <div className="h-[40vh] w-full bg-black z-10">
+            <div className="h-[70vh] w-full bg-black flex  items-center flex-col">
+                <div className="h-[35vh] w-full bg-black z-10">
 
                 </div>
-                <p ref={projectenRef} className="text-[40vh] font text-white left-slide-text -mt-[45vh]">projecten</p>
+                <p ref={projectenRef} className="text-[0vh] font text-white left-slide-text -mt-[30vh]">projecten</p>
             </div>
             {/* Info Box */
             }
