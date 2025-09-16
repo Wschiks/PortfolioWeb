@@ -75,7 +75,7 @@ button {
 }
 
 
-/*Standaard nette ruimte links en rechts naast de page*/
+/*Standaard ruimte links en rechts naast de page*/
 .gapside {
     width: 100%;
     margin-left: auto;
@@ -94,8 +94,6 @@ button {
         max-width: calc(100% - 460px);
     }
 }
-
-
 
 
 @media (min-width: 768px) {

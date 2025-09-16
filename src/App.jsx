@@ -10,7 +10,7 @@ import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// load svgs dynamically
+// pakt alle plaatjes uit de map met .svg stopt dat in de array en die loopen we
 const images = import.meta.glob("/src/assets/*.svg", { eager: true });
 const svgArray = Object.values(images).map((img) => img.default);
 
@@ -20,7 +20,8 @@ function App() {
     const projectenRef = useRef(null);
     const aboutMeRef = useRef(null);
     useEffect(() => {
-        // LEFT + RIGHT (blijft hetzelfde)
+
+        // animatie naar links en rechts
         gsap.to(leftRef.current, {
             x: "-166vw",
             letterSpacing: "9vw",
@@ -43,7 +44,7 @@ function App() {
             },
         });
 
-        // ABOUT ME & PROJECTEN - RESPONSIVE
+        // ABOUT ME en PROJECTEN - RESPONSIVE
         ScrollTrigger.matchMedia({
             "(max-width: 767px)": function() {
                 gsap.to(aboutMeRef.current, {
@@ -112,7 +113,7 @@ function App() {
                         <p className="text-white font">PORTFOLIO</p>
                     </div>
 
-                    {/* Right stripes */}
+                    {/* streepen */}
                     <div className="absolute top-0 right-0 h-full flex flex-row items-start space-x-3 sm:space-x-[1.8vw] pr-3 sm:pr-6">
                         <div className="w-px h-32 bg-white"></div>
                         <div className="w-px h-42 bg-white"></div>
@@ -140,7 +141,7 @@ function App() {
 
 
 
-                {/* Bottom */}
+                {/* streepjes onderaan */}
                 <div className="flex items-end h-1/5">
                     <div className="flex flex-row items-center space-x-[1.8vw] pl-6 h-full">
                         <div className="w-px h-200 bg-white"></div>
@@ -196,7 +197,7 @@ function App() {
                 </div>
             </div>
 
-            {/* PROJECTS TITLE */}
+            {/* PROJECTS  */}
             <div className="h-[50vh] sm:h-[70vh] w-full bg-black flex items-center flex-col">
                 <div className="h-[20vh] sm:h-[35vh] w-full bg-black z-10"></div>
                 <p ref={projectenRef} className="text-[0vh] font text-white -mt-[15vh] sm:-mt-[30vh]">
