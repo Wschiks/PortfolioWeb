@@ -220,7 +220,7 @@ function App() {
                                     Crypto overzicht dashboard
                                 </p>
                                 <p className="text-base sm:text-xl md:text-2xl font-light">
-                                    een overzicht om al je favorieten crypto munten te volgen
+                                    Een overzicht om de waarde van al je favoriete crypto munten te volgen.
                                 </p>
                             </div>
                         </div>
@@ -244,8 +244,7 @@ function App() {
                                     Who is who?
                                 </p>
                                 <p className="text-base sm:text-xl md:text-2xl font-light">
-                                    Twee spelers beurtgebaseerd spel waar bij je het karakter van je
-                                    tegenstander moet gokken.
+                                    Multiplayer webgebaseerd game waarbij je het karakter van je tegenstander moet raden.
                                 </p>
                             </div>
                         </div>
@@ -291,7 +290,7 @@ function App() {
             {/* SKILLS */}
             <div className="h-screen w-screen bg-black flex items-center justify-center wrap-normal flex-col ">
 
-                <h1 className="text-3xl font-bold text-white">skill </h1>
+                <h1 className="text-3xl font-bold text-white">skills </h1>
 
 
                 <div className="overflow-hidden relative w-full">
@@ -336,8 +335,8 @@ function App() {
                 })}
 
                 <div className="sticky top-1/2 transform -translate-y-1/2 h-screen flex items-center justify-center">
-                    <h1 className="text-xl sm:text-xl md:text-xl font-bold text-white text-center px-4">
-                        Oke, dit was 'm zo ongeveer…
+                    <h1 className="text-xl sm:text-xl md:text-xl font-bold text-white text-center px-4 font">
+                        Heeft u een passende stage plek?
                     </h1>
                 </div>
 
@@ -356,10 +355,9 @@ function App() {
                         <div className="w-full h-[2px] bg-gray-300 opacity-40 mt-4 mb-4"></div>
 
                         <a
-                            href="tel:+3112345653"
+                            href="tel:+31 6 39 54 26 53"
                             className="arimo text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white gapside block"
-                        >
-                            +31 12 34 56 53
+                        >+31 6 39 54 26 53
                         </a>
                         <div className="w-full h-[2px] bg-gray-300 opacity-40 mt-4 mb-4"></div>
 
